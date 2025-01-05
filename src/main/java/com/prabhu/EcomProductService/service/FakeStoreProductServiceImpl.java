@@ -35,8 +35,6 @@ public class FakeStoreProductServiceImpl implements ProductService{
 
     @Override
     public ProductResponseDTO getProductById(int id) {
-        int[] k = {1};
-        k[2] = 9;
         String getProductByIdUrl = ("https://fakestoreapi.com/products/"+id);
         RestTemplate restTemplate = restTemplateBuilder.build();
         ResponseEntity<ProductResponseDTO> productResponse = restTemplate.getForEntity(getProductByIdUrl, ProductResponseDTO.class);
