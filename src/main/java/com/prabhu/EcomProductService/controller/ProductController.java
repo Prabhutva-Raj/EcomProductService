@@ -3,6 +3,7 @@ package com.prabhu.EcomProductService.controller;
 import com.prabhu.EcomProductService.dto.ProductListResponseDTO;
 import com.prabhu.EcomProductService.dto.ProductRequestDTO;
 import com.prabhu.EcomProductService.dto.ProductResponseDTO;
+import com.prabhu.EcomProductService.exception.ProductNotFoundException;
 import com.prabhu.EcomProductService.model.Product;
 import com.prabhu.EcomProductService.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity getProductFromId(@PathVariable("id") int id){
+    public ResponseEntity getProductFromId(@PathVariable("id") int id) throws ProductNotFoundException {
         ProductResponseDTO response = productService.getProductById(id);
         return ResponseEntity.ok(response);
 
