@@ -43,25 +43,6 @@ public class ProductController {
 
     @GetMapping("/products")
     public ResponseEntity getAllProducts(){
-        /*ProductResponseDTO p1 = new ProductResponseDTO();
-        p1.setId(1);
-        p1.setTitle("Iphone 15");
-        p1.setPrice(150000);
-        p1.setImage("");
-        p1.setDescription("Iphone at best");
-        p1.setCategory("Electronics");
-
-        ProductResponseDTO p2 = new ProductResponseDTO();
-        p2.setId(2);
-        p2.setTitle("Macbook Pro");
-        p2.setPrice(250000);
-        p2.setImage("");
-        p2.setDescription("Macbook at best");
-        p2.setCategory("Electronics");
-
-        List<ProductResponseDTO> products = Arrays.asList(p1, p2);
-
-        return ResponseEntity.ok(products);*/
         ProductListResponseDTO response = productService.getAllProducts();
         return  ResponseEntity.ok(response);
 
